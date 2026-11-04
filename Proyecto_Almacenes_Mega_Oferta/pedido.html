@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmar pedido | Mega Oferta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<nav class="navbar navbar-dark app-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Mega Oferta</a>
+  </div>
+</nav>
+<main class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="mb-4">
+        <span class="eyebrow">PEDIDO</span>
+        <h1 class="fw-bold">Confirmar pedido</h1>
+      </div>
+      <div id="orderMessage"></div>
+      <form id="orderForm" class="card-soft p-4" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Nombre completo</label>
+            <input id="customerName" class="form-control" required>
+            <div class="invalid-feedback">Ingresa tu nombre.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Teléfono</label>
+            <input id="phone" class="form-control" required pattern="[0-9+ ()-]{8,}">
+            <div class="invalid-feedback">Ingresa un teléfono válido.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Dirección</label>
+            <textarea id="address" class="form-control" rows="3" required></textarea>
+            <div class="invalid-feedback">Ingresa la dirección.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Modalidad de entrega</label>
+            <select id="delivery" class="form-select" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Retiro en tienda">Retiro en tienda</option>
+              <option value="Envío a domicilio">Envío a domicilio</option>
+            </select>
+            <div class="invalid-feedback">Selecciona una modalidad.</div>
+          </div>
+        </div>
+        <div class="order-preview mt-4">
+          <div id="currencyBox" class="mb-2"></div>
+          <div class="d-flex justify-content-between"><span>Total del pedido</span><strong id="orderTotal">$0.00</strong></div>
+          <small class="text-secondary">La conversión es solo informativa; el pedido se registra en USD.</small>
+        </div>
+        <button class="btn btn-primary w-100 mt-4" type="submit">Generar pedido</button>
+      </form>
+      <div id="createdOrder" class="mt-4"></div>
+    </div>
+  </div>
+</main>
+<script src="js/app.js"></script>
+<script src="js/api.js"></script>
+<script src="js/pedido.js"></script>
+</body>
+</html>

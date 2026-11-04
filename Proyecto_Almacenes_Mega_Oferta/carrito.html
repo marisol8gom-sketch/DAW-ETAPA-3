@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito | Mega Oferta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<nav class="navbar navbar-dark app-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Mega Oferta</a>
+    <a class="btn btn-outline-light btn-sm" href="index.html">Seguir comprando</a>
+  </div>
+</nav>
+<main class="container py-5">
+  <div class="mb-4">
+    <span class="eyebrow">COMPRA</span>
+    <h1 class="fw-bold">Tu carrito</h1>
+    <p class="text-secondary">Revisa cantidades y confirma tu pedido.</p>
+  </div>
+  <div id="cartMessage"></div>
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div id="cartItems" class="card-soft p-3"></div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card-soft p-4 sticky-lg-top" style="top:90px">
+        <div id="currencyBox" class="mb-3"></div>
+        <h5 class="fw-bold">Resumen</h5>
+        <div class="d-flex justify-content-between my-3">
+          <span>Subtotal</span><strong id="cartTotal">$0.00</strong>
+        </div>
+        <hr>
+        <a id="checkoutButton" href="pedido.html" class="btn btn-primary w-100">Confirmar pedido</a>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="js/app.js"></script>
+<script src="js/api.js"></script>
+<script src="js/carrito.js"></script>
+</body>
+</html>
